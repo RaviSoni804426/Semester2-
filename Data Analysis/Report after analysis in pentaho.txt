@@ -1,0 +1,54 @@
+ETL Pipeline Using Pentaho Data Integration (PDI)
+1. Dataset Selection
+Chosen Dataset:
+Dataset Name: F1 Races
+Source: Kaggle
+Nature of Data: The dataset contains historical data on Formula 1 races from 1950 to 2020. It includes details about races, drivers, constructors, lap times, pit stops, qualifying sessions, and more.
+Reason for Selection: The dataset provides a rich, multi-faceted view of Formula 1 races, allowing for comprehensive ETL exercises including data extraction from multiple files, transformation involving various data types and formats, and loading into a structured format for analysis.
+2. Task Overview
+Dataset Description:
+The F1 Races dataset is a comprehensive collection of data related to Formula 1 races. It includes:
+Results: The outcome of each race including position, points, and other race-specific data.
+3. ETL Pipeline Design
+     Extract
+Steps:
+Download the Dataset: Downloaded the F1 Races dataset from Kaggle and extracted the files locally.
+Connect to Data Sources: In Pentaho Data Integration (PDI), connected to the CSV files using the "CSV Input" step for each data file (e.g., races.csv, drivers.csv, results.csv).
+Initial Data Inspection: Performed a preliminary inspection of the data to understand the structure and identify any immediate issues (e.g., missing values, incorrect data types).
+Challenges:
+File Encoding Issues: Some CSV files had encoding issues. Resolved by setting the correct file encoding (UTF-8) in the "CSV Input" step.
+Data Volume: The dataset was large, making the initial load slow. Addressed by optimizing memory settings in Pentaho and processing files incrementally.
+Transform
+Steps and Transformations:
+Data Cleaning:
+
+Missing Values: Identified missing values and handled them using appropriate strategies (e.g., filling with defaults, using averages, or removing rows).
+Data Type Conversion: Converted data types to ensure consistency, such as dates to Date format, numerical strings to integers or floats.
+Filtering and Aggregation:
+
+Filtering Rows: Filtered out irrelevant rows (e.g., races with incomplete data).
+Data Cleaning: Ensures data quality and consistency.
+Filtering and Aggregation: Simplifies the dataset and focuses on relevant information.
+Joining Data: Provides a unified view of the data, essential for comprehensive analysis.
+Results Table: resultId (PK), raceId (FK), driverId (FK), constructorId (FK), position, points.
+Reason for Choice:
+Normalized Structure: Facilitates efficient querying and analysis.
+4. Challenges and Solutions
+Specific Challenges:
+Data Quality Issues: Encountered inconsistencies in data formats and missing values.
+
+Solution: Implemented data validation and cleaning steps in the transformation process.
+Performance Bottlenecks: Slow performance during large data loads.
+
+Solution: Optimized Pentaho memory settings and used batch processing for large files.
+Complex Joins: Difficulties in joining multiple large datasets.
+5. Outcome and Reflection
+Learning and Insights:
+Understanding ETL Concepts: This exercise provided hands-on experience with the core concepts of ETL processes, including data extraction, transformation, and loading.
+Data Quality Importance: Highlighted the importance of data quality and the need for robust data cleaning and validation processes.
+Tool Proficiency: Improved proficiency in using Pentaho Data Integration for complex ETL tasks.
+Screenshots and Pentaho Workflow:
+Workflow Screenshot: Attached in the report.
+Transformation File: Provided as part of the submission.
+Conclusion:
+Building the ETL pipeline for the F1 Races dataset was an insightful exercise that demonstrated the importance of each ETL phase. It underscored the need for careful planning and execution to ensure data integrity and performance. The hands-on experience with Pentaho Data Integration solidified my understanding of ETL processes and best practices.
